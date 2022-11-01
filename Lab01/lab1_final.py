@@ -162,7 +162,7 @@ def main():
     pop, logbook = algorithms.eaMuPlusLambda(pop, toolbox, MU, LAMBDA, CXPB, MUTPB, NGEN, stats,
                               halloffame=hof)
 
-    print("Vrijeme izvrsavanja: " + str(round(time.time() - start_time, 2)) + " ms")
+    print("Vrijeme izvrsavanja: " + str(round(time.time() - start_time, 2)) + " s")
     record = stats.compile(pop)
     print(record)
     print(sorted(hof[-1]))
