@@ -32,7 +32,6 @@ from deap import creator
 from deap import tools
 
 IND_INIT_SIZE = 5   # Individual initial size -> toolbox.register("individual"....)
-MAX_ITEM = 50       # Maximum number of items allowed inside individual
 MAX_WEIGHT = 50     # Maximum weight allowed in Individual
 NBR_ITEMS = 50      # Number of DIFFERENT ITEMS
 MIN_ITEMS = 1       # Minimal number of items required in Individual
@@ -92,9 +91,6 @@ def evalKnapsack(individual):
 
     if weight > MAX_WEIGHT:
         return 100, 0  # Ensure overweight bags are dominated
-
-    if len(individual) > MAX_ITEM:
-        return 200, 0  # Dominate if too many items in individual
 
     if len(individual) <= MIN_ITEMS:
         return 500, 0  # Dominate if less than allowed items
